@@ -1,10 +1,10 @@
-name: WebGoat CI
+name: Java CI
 
 on:
   push:
-    branches: main
+    branches: [ main ]
   pull_request:
-    branches:  main
+    branches: [ main ]
 
 jobs:
 
@@ -21,10 +21,10 @@ jobs:
         distribution: 'adopt'
         
     - name: Build with Maven
-      run: mvn clean package
+      run: mvn clean install
       
     - name: Upload Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
-        name: webgoat-package
-        path: webgoat-server/target/*.war
+        name: java-package
+        path: target/*.jar
