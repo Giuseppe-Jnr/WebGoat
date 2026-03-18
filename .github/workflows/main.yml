@@ -23,7 +23,7 @@ jobs:
           java-version: '25'
 
       - name: display hello world
-        run: echo"hello world"
+        run: echo "hello world"
 
       - name: compile
         run: mvn clean compile
