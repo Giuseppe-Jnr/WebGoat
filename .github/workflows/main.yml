@@ -31,5 +31,20 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
 
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '25'
+
+
       - name: Run Tests
         run: mvn test
